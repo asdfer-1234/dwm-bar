@@ -13,7 +13,7 @@ dwm_networkmanager () {
     fi
 
     if [ "$IDENTIFIER" = "unicode" ]; then
-        export __DWM_BAR_NETWORKMANAGER__="${SEP1}🌐${CONNAME}${SEP2}"
+        export __DWM_BAR_NETWORKMANAGER__="${SEP1}${CONNAME}${SEP2}"
     else
         export __DWM_BAR_NETWORKMANAGER__="${SEP1}NET ${CONNAME}${SEP2}"
     fi
