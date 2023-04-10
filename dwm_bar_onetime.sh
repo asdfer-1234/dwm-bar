@@ -45,53 +45,36 @@ export SEP2=" "
 #. "$DIR/bar-functions/dwm_weather.sh"
 #. "$DIR/bar-functions/dwm_network_speed.sh"
 
-parallelize() {
-    while true
-    do
-        dwm_networkmanager &
-        #dwm_weather &
-        sleep 5
-    done
-}
-parallelize &
 
 # Update dwm status bar every second
-while true
-do
-    # Append results of each func one by one to the upperbar string
-    upperbar=""
-    #upperbar="$upperbar$(dwm_alarm)"
-    upperbar="$upperbar$(dwm_alsa)"
-    #upperbar="$upperbar$(dwm_backlight)"
-    upperbar="$upperbar$(dwm_battery)"
-    #upperbar="$upperbar$(dwm_ccurse)"
-    #upperbar="$upperbar$(dwm_cmus)"
-    #upperbar="$upperbar$(dwm_connman)"
-    #upperbar="$upperbar$(dwm_countdown)"
-    #upperbar="$upperbar$(dwm_currency)"
-    upperbar="$upperbar$(dwm_date)"
-    #upperbar="$upperbar$(dwm_keyboard)"
-    #upperbar="$upperbar$(dwm_loadavg)"
-    #upperbar="$upperbar$(dwm_mail)"
-    #upperbar="$upperbar$(dwm_mpc)"
-    #upperbar="$upperbar$(dwm_pulse)"
-    upperbar="$upperbar$(dwm_resources)"
-    #upperbar="$upperbar$(dwm_spotify)"
-    #upperbar="$upperbar$(dwm_transmission)"
-    #upperbar="$upperbar$(dwm_vpn)"
-    upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
-    #upperbar="$upperbar${__DWM_BAR_WEATHER__}"
-    #upperbar="$upperbar$(dwm_network_speed)"; dwm_network_speed_record
-   
-    # Append results of each func one by one to the lowerbar string
-    lowerbar=""
-    
-    xsetroot -name "$upperbar"
-    RESULT=$?
-    if (( RESULT != 0 )); then
-	    break;
-    fi
-    # Uncomment the line below to enable the lowerbar 
-    #xsetroot -name "$upperbar;$lowerbar"
-    sleep 1
-done
+# Append results of each func one by one to the upperbar string
+upperbar=""
+#upperbar="$upperbar$(dwm_alarm)"
+upperbar="$upperbar$(dwm_alsa)"
+#upperbar="$upperbar$(dwm_backlight)"
+upperbar="$upperbar$(dwm_battery)"
+#upperbar="$upperbar$(dwm_ccurse)"
+#upperbar="$upperbar$(dwm_cmus)"
+#upperbar="$upperbar$(dwm_connman)"
+#upperbar="$upperbar$(dwm_countdown)"
+#upperbar="$upperbar$(dwm_currency)"
+upperbar="$upperbar$(dwm_date)"
+#upperbar="$upperbar$(dwm_keyboard)"
+#upperbar="$upperbar$(dwm_loadavg)"
+#upperbar="$upperbar$(dwm_mail)"
+#upperbar="$upperbar$(dwm_mpc)"
+#upperbar="$upperbar$(dwm_pulse)"
+upperbar="$upperbar$(dwm_resources)"
+#upperbar="$upperbar$(dwm_spotify)"
+#upperbar="$upperbar$(dwm_transmission)"
+#upperbar="$upperbar$(dwm_vpn)"
+upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
+#upperbar="$upperbar${__DWM_BAR_WEATHER__}"
+#upperbar="$upperbar$(dwm_network_speed)"; dwm_network_speed_record
+
+# Append results of each func one by one to the lowerbar string
+lowerbar=""
+
+xsetroot -name "$upperbar"
+# Uncomment the line below to enable the lowerbar 
+#xsetroot -name "$upperbar;$lowerbar"

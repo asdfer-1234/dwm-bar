@@ -11,23 +11,53 @@ dwm_battery () {
 	
 	if [ "$STATUS" != "Full" ]; then
 		printf "%s" "$SEP1"
-
-		if (( CHARGE < 20 )); then
-			printf ""
-		else if (( CHARGE < 40 )); then
-			printf ""
-		else if (( CHARGE < 60 )); then
-			printf ""
-		else if (( CHARGE < 80 )); then
-			printf ""
-		else
-			printf ""
-		fi fi fi fi 
-
+		printf ""
 		if [ "$STATUS" = "Charging" ]; then
-			printf ""
+			if (( CHARGE <= 10 )); then
+				printf "󰢜"
+			else if (( CHARGE <= 20 )); then
+				printf "󰂆"
+			else if (( CHARGE <= 30 )); then
+				printf "󰂇"
+			else if (( CHARGE <= 40 )); then
+				printf "󰂈"
+			else if (( CHARGE <= 50 )); then
+				printf "󰢝"
+			else if (( CHARGE <= 60 )); then
+				printf "󰂉"
+			else if (( CHARGE <= 70 )); then
+				printf "󰢞"
+			else if (( CHARGE <= 80 )); then
+				printf "󰂊"
+			else if (( CHARGE <= 90 )); then
+				printf "󰂋"
+			else
+				printf "󰂄"
+			fi fi fi fi fi fi fi fi fi
+		else
+			if (( CHARGE <= 10 )); then
+				printf "󰁺"
+			else if (( CHARGE <= 20 )); then
+				printf "󰁻"
+			else if (( CHARGE <= 30 )); then
+				printf "󰁼"
+			else if (( CHARGE <= 40 )); then
+				printf "󰁽"
+			else if (( CHARGE <= 50 )); then
+				printf "󰁾"
+			else if (( CHARGE <= 60 )); then
+				printf "󰁿"
+			else if (( CHARGE <= 70 )); then
+				printf "󰂀"
+			else if (( CHARGE <= 80 )); then
+				printf "󰂁"
+			else if (( CHARGE <= 90 )); then
+				printf "󰂂"
+			else
+				printf "󰁹"
+			fi fi fi fi fi fi fi fi fi
 		fi
-		printf "$CHARGE"
+		printf "%2s" "$CHARGE"
 		
 		printf "%s\n" "$SEP2"
 	fi
