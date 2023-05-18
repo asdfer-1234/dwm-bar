@@ -13,7 +13,7 @@ dwm_alsa () {
 		printf "%s" "$SEP1"
 		printf ""
 		if [ "$VOL" -le 33 ]; then
-			printf "🔈"
+			printf "󰕿"
 		elif [ "$VOL" -le 66 ]; then
 			printf "󰖀"
 		else
